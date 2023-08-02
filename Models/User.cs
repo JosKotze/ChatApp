@@ -7,29 +7,9 @@ namespace ChatApp.Models
     {
 
         // prvate fields -> 
-        private string userID;
-        private string username;
-        private string password;
-
-        // getters and setters
-        public string UserID
-        {
-            get { return userID; }
-            set { userID = value; }
-        }
-
-        public string Username
-        {
-            get { return username; }
-            set { username = value; }
-        }
-
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-
+        private string userID { get; set; }
+        private string username { get; set; }
+        private string password { get; set; }
 
         /*
         public List<Chatroom> ChatroomsList
@@ -41,8 +21,6 @@ namespace ChatApp.Models
 
 
         //Functions:
-
-
         static string GenerateUserID()
         {   // only called when registered. So where does that happen?
 
@@ -65,6 +43,7 @@ namespace ChatApp.Models
             Console.WriteLine(UserID);
             return UserID;
         }
+
         public void EnterUserName()
         {
 
