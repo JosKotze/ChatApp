@@ -2,13 +2,9 @@ namespace ChatApp.Models
 {
     public class Message
     {
-
-
-
         public string SenderID { get; set; }
         public string Content { get; set; }
         public DateTime Timestamp { get; set; }
-        public bool IsRead { get; }
 
 
         // Constructor
@@ -17,7 +13,6 @@ namespace ChatApp.Models
             SenderID = senderID;
             Content = content;
             Timestamp = DateTime.Now;
-            IsRead = false; // By default, a new message is unread.
         }
 
 
