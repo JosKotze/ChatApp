@@ -2,11 +2,9 @@ namespace ChatApp.Models
 {
     public class Chatroom
     {
-        public string ChatroomName { get; set; }
         public string ChatroomID { get; set; }
-        public string JoinCode { get; set; }
-        public string DateCreated { get; set; }
-        public string CreatorID { get; set; }
+        public ICollection<Message> messages { get; set; }
+        public ICollection<User> users { get; set; }
         public string logFileName { get; set; }
 
         //public List<Log> ChatHistory { get; set; }

@@ -62,3 +62,7 @@ C:\C# project\dotnet ChatApp\ChatApp\obj\Debug\net6.0\refint\ChatApp.dll
 C:\C# project\dotnet ChatApp\ChatApp\obj\Debug\net6.0\ChatApp.pdb
 C:\C# project\dotnet ChatApp\ChatApp\obj\Debug\net6.0\ChatApp.genruntimeconfig.cache
 C:\C# project\dotnet ChatApp\ChatApp\obj\Debug\net6.0\ref\ChatApp.dll
+C:\C# project\dotnet ChatApp\ChatApp\bin\Debug\net6.0\libman.json
+C:\C# project\dotnet ChatApp\ChatApp\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\C# project\dotnet ChatApp\ChatApp\bin\Debug\net6.0\Owin.dll
+C:\C# project\dotnet ChatApp\ChatApp\obj\Debug\net6.0\ChatApp.csproj.CopyComplete
