@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ChatApp.Models;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace ChatApp.Controllers;
 
@@ -28,4 +30,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
 }

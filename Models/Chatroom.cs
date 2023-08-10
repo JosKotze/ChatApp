@@ -18,23 +18,14 @@ namespace ChatApp.Models
         // Methods
 
         // :)
-
-        public void createLogFile()
-        {
-
-            // Create text file if !exists
-
-        }
         public void GetChatLog()
         {
             // get log.txt file from server and convert to list or array.
-
         }
 
         public void CreateRoom()
         {
             // get log.txt file from server and convert to list or array.
-
         }
 
         static string GenerateRoomJoinCode()

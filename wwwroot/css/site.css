@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 /*!
  * Bootswatch v5.3.1 (https://bootswatch.com)
@@ -196,6 +197,65 @@
   :root {
     scroll-behavior: smooth;
   }
+}
+
+/* text bubbles */
+#messagesList {
+  display: flex;
+  flex-direction: column; /* Stack bubbles vertically */
+  align-items: flex-start; /* Align bubbles to the left side */
+}
+
+.receiver-bubble {
+  align-self: flex-start;
+  max-width: 40rem;
+  background-color: #d6ffff;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+  
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.sender-bubble {
+  align-self: flex-end;
+  max-width: 40rem;
+  background-color: #fcd7c6;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+
+  border-top-left-radius: 5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 1.5em;
+  border: 0.75rem solid transparent;
+  border-top: none;
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+}
+
+.sender-bubble::before {
+  right: 1.5em;
+  left: auto;
+  border: 0.75rem solid transparent;
+  border-top: none;
+  border-bottom-color: #e0e0e0;
 }
 
 body {

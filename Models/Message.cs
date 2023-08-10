@@ -1,18 +1,19 @@
+using Serilog;
+
 namespace ChatApp.Models
 {
     public class Message
     {
-        public string SenderID { get; set; }
+        public string Username { get; set; }
         public string Content { get; set; }
-        public DateTime Timestamp { get; set; }
 
 
         // Constructor
-        public Message(string senderID, string content)
+
+        public Message(string username, string content)
         {
-            SenderID = senderID;
+            Username = username;
             Content = content;
-            Timestamp = DateTime.Now;
         }
 
 

@@ -7,9 +7,7 @@ namespace ChatApp.Models
     {
 
         // prvate fields -> 
-        private string userID { get; set; }
         private string username { get; set; }
-        private string password { get; set; }
 
         /*
         public List<Chatroom> ChatroomsList
