@@ -55,6 +55,28 @@ connection.on("ReceiveMessage", function (user, message) {
     // log message.
 });
 
+document.addEventListener("input", function (e) {
+    if (e.target && e.target.classList.contains("auto-expand")) {
+      e.target.style.height = "auto";
+      e.target.style.height = e.target.scrollHeight + "px";
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const changeFormatButton = document.getElementById("changeFormatButton");
+    const messageInput = document.getElementById("messageInput");
+
+    changeFormatButton.addEventListener("click", function () {
+        if (messageInput.classList.contains("text-style-large")) {
+            messageInput.classList.remove("text-style-large");
+        } else {
+            messageInput.classList.add("text-style-large");
+        }
+    });
+});
+
+
+
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
 }).catch(function (err) {

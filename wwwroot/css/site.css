@@ -797,6 +797,30 @@ progress {
   font-size: 0.875em;
   color: var(--bs-secondary-color);
 }
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Adjust as needed */
+  justify-content: space-between;
+}
+#userInput,
+#messageInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+
+.auto-expand {
+  height: auto;
+  overflow-y: hidden;
+}
+
+.text-style-large {
+  font-size: 20px;
+  /* formatting properties here */
+}
 
 .container,
 .container-fluid,
@@ -812,6 +836,9 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+  position: absolute;
+  bottom: 0;
+
 }
 
 @media (min-width: 576px) {
@@ -901,7 +928,7 @@ progress {
 }
 
 .row-cols-6 > * {
-  flex: 0 0 auto;
+  flex: 0 2 auto;
   width: 16.6666666667%;
 }
 
@@ -4051,6 +4078,7 @@ textarea.form-control-lg {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+  
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
