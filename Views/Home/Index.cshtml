@@ -1,17 +1,23 @@
-﻿@page
-<div class="container">
-  <div class="row p-1">
-    <div class="col-1">User</div>
-    <div class="col-5"><input type="text" id="userInput" /></div>
-  </div>
-  <div class="row p-1">
-    <div class="col-1">Message</div>
-    <div class="col-5">
-      <input type="text" class="w-100" id="messageInput" />
+﻿<div class="container chat-container">
+  <div class="row p-1 align-items-start">
+    <div class="col-12">
+      <input type="text" id="userInput" class="w-100" placeholder="Username" />
     </div>
   </div>
+ 
   <div class="row p-1">
-    <div class="col-6 text-end">
+    <div class="col-12">
+      <ul id="messagesList"></ul>
+    </div>
+  </div>
+  <div class="row p-1 align-items-end">
+    <div class="col-5">
+      <input type="text" id="messageInput" class="w-100 auto-expand" placeholder="Message" />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-light" id="changeFormatButton">Change Format</button>
+    </div>
+    <div class="col-7 text-end">
       <input
         class="btn btn-light"
         type="button"
@@ -20,18 +26,6 @@
       />
     </div>
   </div>
-  <div class="row p-1">
-    <div class="col-6">
-      <hr />
-    </div>
-  </div>
-  <div class="row p-1">
-    <div class="col-6">
-      <ul id="messagesList"></ul>
-    </div>
-  </div>
 </div>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
-
-
