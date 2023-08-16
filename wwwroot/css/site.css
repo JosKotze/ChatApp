@@ -198,6 +198,82 @@
   }
 }
 
+/* text bubbles */
+
+
+.receiver-bubble {
+  max-width: 40rem;
+  background-color: #d6ffff;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.sender-bubble {
+  max-width: 40rem;
+  background-color: #fcd7c6;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 1.5em;
+  border: 0.75rem solid transparent;
+  border-top: none;
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+}
+
+.sender-bubble::before {
+  right: 1.5em;
+  left: auto;
+  border: 0.75rem solid transparent;
+  border-top: none;
+  border-bottom-color: #e0e0e0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+  grid-template-rows: auto; /* Adjust as needed /
+  gap: 10px; / Adjust the gap between columns /
+  width: 100%; / Set a width for the container if needed */
+}
+
+.col1 {
+  
+  padding: 10px;
+}
+
+.col2 {
+  
+  padding: 10px;
+}
+
+.col3 {
+  
+  padding: 10px;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -760,6 +836,15 @@ progress {
 .text-style-large {
   font-size: 20px;
   /* formatting properties here */
+}
+
+#messageInputContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+   /* Set the background color you prefer */
+  padding: 10px;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .container,
@@ -12099,8 +12184,23 @@ textarea.form-control-lg {
 }
 body {
   min-height: 100vh;
-  background-image: linear-gradient(#17082e 0%, #1a0933 7%, #1a0933 80%, #0c1f4c 100%);
   text-shadow: 0 0 1px rgba(50, 251, 226, 0.3), 0 0 2px rgba(50, 251, 226, 0.3), 0 0 5px rgba(50, 251, 226, 0.2);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 500vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1,
