@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l9VctEHk3abLRMJINXww8WCBWMeM0wBHG6yLQ5jlvhF36ThQnRVko7WzCY/ktGmD8lXpguBqe2qEej9CWDD3cg==",
+  "dgSpecHash": "F2Or/U1Hr5HXOm79js+nXKN4eW/MPprI6GKgkRFHuby3jSbvT7kq1jWuATNlF12AI/aw9glKQv1faqHq+zWvLg==",
   "success": true,
-  "projectFilePath": "C:\\C# project\\dotnet ChatApp\\ChatApp\\ChatApp.csproj",
+  "projectFilePath": "C:\\Projects\\ChatApp\\ChatApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jos\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Jos\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",

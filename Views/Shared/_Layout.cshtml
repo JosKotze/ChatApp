@@ -9,21 +9,6 @@
     <link rel="stylesheet" href="~/ChatApp.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Chat in Hat</a>    
-            </div>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <div class="d-flex justify-content-end"> <!-- Add justify-content-end class here -->
-                        <div style="margin-right: 20px;"> <!-- Add margin-right or padding-right here -->
-                            <div>UserName</div>
-                            <div><input type="text" id="userInput" /></div>
-                        </div>
-                    </div>
-                </div>
-        </nav>
-    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
