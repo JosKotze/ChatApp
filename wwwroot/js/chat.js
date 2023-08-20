@@ -76,6 +76,17 @@ document.addEventListener("input", function (e) {
 });
 
 
+const messageInputContainer = document.getElementById('messageInputContainer');
+const chatContainer = document.querySelector('.chat-container');
+
+chatContainer.addEventListener('scroll', () => {
+  if (chatContainer.scrollTop + chatContainer.clientHeight >= chatContainer.scrollHeight) {
+    messageInputContainer.style.position = 'fixed';
+  } else {
+    messageInputContainer.style.position = 'relative';
+  }
+});
+
 
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
