@@ -2,30 +2,37 @@
 using Microsoft.AspNetCore.Mvc;
 using ChatApp.Models;
 
-namespace ChatApp.Controllers;
-
-public class HomeController : Controller
+namespace ChatApp.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    // Define the HomeController class which inherits from Controller.
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly ILogger<HomeController> _logger;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        // Constructor that injects an instance of ILogger<HomeController>.
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        // Action method for the "Index" view.
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // Action method for the "Privacy" view.
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        // Action method for handling errors and displaying the "Error" view.
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            // Create an ErrorViewModel with a RequestId.
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }

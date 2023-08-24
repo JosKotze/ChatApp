@@ -2,17 +2,16 @@
 // this file is client-side javascript.
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 // new instance of signarlR connection. And it builds it. creates connection.
+// Its the chathub we mapped in Program.cs
 
 
 //Disable the send button until connection is established.
 document.getElementById("sendButton").disabled = true;
 
 
-connection.on("ReceiveMessage", function (user, message) {
-
-    //var isSender = true; //default
-    //console.log(chat.Username);
-
+connection.on("ReceiveMessage", function (user, message) { // this is where we tell UI how to respond to ReceiveMessage event
+    // on event receive message
+    // each sent message is received by receiver aswell as sender.
     var CurrentUser = document.getElementById("userInput").value;
 
     var isSender = user === CurrentUser;
@@ -30,9 +29,11 @@ connection.on("ReceiveMessage", function (user, message) {
     messagePara.style.cssText = "font-size: 20px; color: black;";
     messagePara.textContent = message; // Use chat.Content instead of message
     bubble.appendChild(messagePara);
+    messagePara.className = "content";
 
     var timestampPara = document.createElement("p"); // Paragraph for the timestamp and sender
     timestampPara.style.cssText = "margin-left: 80%; margin-right: auto; margin-bottom: -10px; font-size: 16px; color: black; font-weight: lighter;";
+    timestampPara.className = "content";
 
     var today = new Date(); // Use chat.Timestamp
     var timestamp = today.toLocaleTimeString();
@@ -55,25 +56,12 @@ connection.on("ReceiveMessage", function (user, message) {
     // log message.
 });
 
-document.addEventListener("input", function (e) {
-    if (e.target && e.target.classList.contains("auto-expand")) {
-      e.target.style.height = "auto";
-      e.target.style.height = e.target.scrollHeight + "px";
-    }
-  });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const changeFormatButton = document.getElementById("changeFormatButton");
-    const messageInput = document.getElementById("messageInput");
-
-    changeFormatButton.addEventListener("click", function () {
-        if (messageInput.classList.contains("text-style-large")) {
-            messageInput.classList.remove("text-style-large");
-        } else {
-            messageInput.classList.add("text-style-large");
-        }
+$(document).ready(function() {
+    $("#slider").on("input", function() {
+        $('.content, #userInput, #messagesList, #messageInput').css("font-size", $(this).val() + ".5px");
     });
-});
+}); // Slide to change font size
 
 
 const messageInputContainer = document.getElementById('messageInputContainer');

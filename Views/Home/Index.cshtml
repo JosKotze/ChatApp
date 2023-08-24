@@ -1,14 +1,16 @@
-﻿<div class="container chat-container">
+﻿<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<div class="container chat-container">
   <div class="row p-1 align-items-start">
     <div class="col-12">
       <div>UserName</div>
       <input type="text" id="userInput" class="w-100" placeholder="Username" />
     </div>
   </div>
+  
  
   <div class="row p-1">
-    <div class="col-12">
-      <ul id="messagesList"></ul>
+    <div class="col-11">
+      <ul id="messagesList"></ul> 
     </div>
   </div>
   <div class="row p-1 align-items-end" id="messageInputContainer">
@@ -17,7 +19,7 @@
          <input type="text" id="messageInput" class="w-100 auto-expand" placeholder="Message" />
      </div>
     <div class="col2">
-        <button class="btn btn-light" id="changeFormatButton">Change Format</button>
+        <input class="form-range" type="range" min="15" max="50" value="0" id="slider" step="1">
     </div>
     <div class="col3">
     <input
