@@ -12182,6 +12182,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
 body {
   min-height: 100vh;
   text-shadow: 0 0 1px rgba(50, 251, 226, 0.3), 0 0 2px rgba(50, 251, 226, 0.3), 0 0 5px rgba(50, 251, 226, 0.2);

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(); // adding SignalR service
 
 
 // global loggers
@@ -48,6 +48,11 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
+app.MapControllerRoute(
+    name: "jokes",
+    pattern: "jokes",
+    defaults: new { controller = "Jokes", action = "Index" });
 
 app.MapRazorPages();
 app.MapHub<ChatHub>("/chatHub");

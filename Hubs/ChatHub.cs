@@ -4,7 +4,7 @@ using Serilog;
 using ChatApp.Models;
 
 namespace ChatApp.Hubs
-{
+{ // ChatHub is derived from hub. We can use Hub for other projects than a chat app. Like notifications.
 
     public class ChatHub : Hub
     {
@@ -19,7 +19,7 @@ namespace ChatApp.Hubs
         }
 
         public async Task SendMessage(string user, string message)
-        {
+        {   // client can contact this method remotely
             try
             {
                 Message chat = new Message(user, message);
@@ -33,6 +33,7 @@ namespace ChatApp.Hubs
                 await Clients.All.SendAsync("ReceiveMessage", chat.Username, chat.Content);
                 //sends object to javascript
                 _messageLogger.LogInformation("{User}: {Message}", chat.Username, chat.Content);
+                // happens on server side so all sent messages will be logged
             }
             catch (Exception ex)
             {
