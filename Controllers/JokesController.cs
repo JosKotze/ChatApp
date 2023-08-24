@@ -13,7 +13,6 @@ namespace ChatApp.Controllers
         public async Task<IActionResult> Index()
         {
 
-
             var client = new HttpClient(); // create instance of HttpClient to make HTTP requests
             
             var request = new HttpRequestMessage // Create an HttpRequestMessage for making a GET request to the joke API

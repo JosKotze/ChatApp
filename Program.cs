@@ -55,6 +55,7 @@ app.MapControllerRoute(
     defaults: new { controller = "Jokes", action = "Index" });
 
 app.MapRazorPages();
-app.MapHub<ChatHub>("/chatHub");
+app.MapHub<ChatHub>("/chatHub"); // app.MapHub of type ChatHub give it endpoint /chathub
+// we can have more the one hubs
 
 app.Run();
