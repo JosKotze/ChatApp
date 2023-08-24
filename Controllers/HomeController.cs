@@ -1,35 +1,38 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ChatApp.Models;
-using Microsoft.Extensions.Logging;
-using Serilog;
 
-namespace ChatApp.Controllers;
-
-public class HomeController : Controller
+namespace ChatApp.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    // Define the HomeController class which inherits from Controller.
+    public class HomeController : Controller
     {
-        _logger = logger;
+        private readonly ILogger<HomeController> _logger;
+
+        // Constructor that injects an instance of ILogger<HomeController>.
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        // Action method for the "Index" view.
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        // Action method for the "Privacy" view.
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        // Action method for handling errors and displaying the "Error" view.
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            // Create an ErrorViewModel with a RequestId.
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-
 }
